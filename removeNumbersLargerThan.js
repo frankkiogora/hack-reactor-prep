@@ -1,17 +1,11 @@
-function removeNumbersLargerThan(num, obj) {
-  for(var prop in obj){
-    if (obj[prop] > num) {
-      delete obj[prop];
+function removeStringValuesLongerThan(num, obj) {
+  // your code here
+  for(var key in obj){
+    if(typeof(obj[key]==='string') && obj[key].length > num){
+      delete obj[key];
     }
   }
   return obj;
 }
-
-var obj = {
-  a: 8,
-  b: 2,
-  c: 'montana'
-}
-
-removeNumbersLargerThan(5, obj);
+removeStringValuesLongerThan(6, obj);
 console.log(obj); // --> { b: 2, c: 'montana' }
